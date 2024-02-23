@@ -33,6 +33,7 @@ exit
 # To run the proejct in development
 docker run --volume $(pwd):/usr/src/DockerNodeJSSample --workdir /usr/src/DockerNodeJSSample --publish 5000:5000 --rm -it --entrypoint /bin/sh dockernodejssample:0.1
 pwd
+ls -lt
 npm run env -- nodemon --legacy-watch src/app.js
 
 # To run the proejct in production
