@@ -7,10 +7,11 @@ FROM node:${NODE_VERSION}-alpine
 # Use production node environment by default.
 ENV NODE_ENV production
 
-WORKDIR /usr/src/DockerNodeJSSample
+WORKDIR /usr/src/dockernodejssample
 RUN npm init -y
 RUN npm install express body-parser mongoose web3 nodemailer
 
-COPY . .
+COPY src src
+COPY index.js .
 
-CMD node src/app.js
+CMD node index.js

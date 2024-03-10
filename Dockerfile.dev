@@ -7,11 +7,13 @@ FROM node:${NODE_VERSION}-alpine
 # Use development node environment by default.
 ENV NODE_ENV development
 
-WORKDIR /usr/src/DockerNodeJSSample
+WORKDIR /usr/src/dockernodejssample
 RUN npm init -y
 RUN npm install express body-parser mongoose web3 nodemailer
 
 RUN npm install --save-dev cors nodemon
-COPY . .
+COPY src src
+COPY index.js .
+
 
 CMD npm run env -- nodemon --legacy-watch src/app.js
